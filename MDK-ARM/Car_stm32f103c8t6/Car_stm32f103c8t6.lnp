@@ -1,0 +1,24 @@
+--cpu Cortex-M3
+"car_stm32f103c8t6\startup_stm32f103xb.o"
+"car_stm32f103c8t6\main.o"
+"car_stm32f103c8t6\stm32f1xx_it.o"
+"car_stm32f103c8t6\stm32f1xx_hal_msp.o"
+"car_stm32f103c8t6\stm32f1xx_hal_gpio_ex.o"
+"car_stm32f103c8t6\stm32f1xx_hal_tim.o"
+"car_stm32f103c8t6\stm32f1xx_hal_tim_ex.o"
+"car_stm32f103c8t6\stm32f1xx_hal.o"
+"car_stm32f103c8t6\stm32f1xx_hal_rcc.o"
+"car_stm32f103c8t6\stm32f1xx_hal_rcc_ex.o"
+"car_stm32f103c8t6\stm32f1xx_hal_gpio.o"
+"car_stm32f103c8t6\stm32f1xx_hal_dma.o"
+"car_stm32f103c8t6\stm32f1xx_hal_cortex.o"
+"car_stm32f103c8t6\stm32f1xx_hal_pwr.o"
+"car_stm32f103c8t6\stm32f1xx_hal_flash.o"
+"car_stm32f103c8t6\stm32f1xx_hal_flash_ex.o"
+"car_stm32f103c8t6\stm32f1xx_hal_exti.o"
+"car_stm32f103c8t6\stm32f1xx_hal_uart.o"
+"car_stm32f103c8t6\system_stm32f1xx.o"
+--strict --scatter "Car_stm32f103c8t6\Car_stm32f103c8t6.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Car_stm32f103c8t6.map" -o Car_stm32f103c8t6\Car_stm32f103c8t6.axf
