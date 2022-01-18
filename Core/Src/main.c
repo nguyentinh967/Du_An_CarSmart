@@ -71,9 +71,9 @@ uint8_t distance_left = 0;
 uint8_t distance_right = 0;
 uint8_t is_capture;
 uint8_t Val_S1 = 0, Val_S2 = 0, Val_S3 = 0, Val_S4 = 0, Val_S5 = 0;
-char *str = "hello\n";
-uint8_t data[10];
-uint8_t count = 0;
+uint8_t Tx_data[10] = "Hello Anh"; // mang truyen du lieu
+uint8_t Rx_data[5]; // buffer luu chuoi nhan dc
+
 void Delay_us(uint16_t us)
 {
 	htim1.Instance->CNT = 0;
@@ -239,15 +239,12 @@ void Mode_Line()
 }
 void Mode_Bluetooth()
 {
-	//HAL_UART_Transmit_IT(&huart1, (uint8_t *)str, strlen(str));
-	HAL_UART_Receive_IT(&huart1, data, 1);
-	if(data[0] == 'F'){
-		Forward();
-	}
+	//HAL_UART_Transmit(&huart1, Tx_data, sizeof(Tx_data), 1000);
+	HAL_UART_Receive_IT(&huart1, Rx_data, 5);
 }
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	count++;
+	
 }
 /* USER CODE END 0 */
 
