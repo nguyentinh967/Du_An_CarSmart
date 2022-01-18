@@ -294,7 +294,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		Mode_Line();
+		Mode_Bluetooth();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
