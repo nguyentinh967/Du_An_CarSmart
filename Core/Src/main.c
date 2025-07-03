@@ -90,17 +90,17 @@ void Sr04_Trigger()
 }
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
-	if(htim -> Channel == HAL_TIM_ACTIVE_CHANNEL_1) //kiem tra kênh gây ra ngat
+	if(htim -> Channel == HAL_TIM_ACTIVE_CHANNEL_1) //kiem tra kï¿½nh gï¿½y ra ngat
 		{
-			if(is_capture == 0)  // neu giá tri dau tiên không duoc nam bat 
+			if(is_capture == 0)  // neu giï¿½ tri dau tiï¿½n khï¿½ng duoc nam bat 
 				{
-					IC_Val1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1); // luu giá tri thoi gian cua lan lay mau dau
+					IC_Val1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1); // luu giï¿½ tri thoi gian cua lan lay mau dau
 					is_capture = 1;
-					__HAL_TIM_SET_CAPTUREPOLARITY(htim,TIM_CHANNEL_1,TIM_INPUTCHANNELPOLARITY_FALLING); // Bây gio thay doi cuc thành canh roi 
+					__HAL_TIM_SET_CAPTUREPOLARITY(htim,TIM_CHANNEL_1,TIM_INPUTCHANNELPOLARITY_FALLING); // Bï¿½y gio thay doi cuc thï¿½nh canh roi 
 				}
-			else if(is_capture == 1) // neu giá tri dau tiên dã duoc chup
+			else if(is_capture == 1) // neu giï¿½ tri dau tiï¿½n dï¿½ duoc chup
 				{
-					IC_Val2 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1); // luu giá tri thoi gian cua lan 2
+					IC_Val2 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1); // luu giï¿½ tri thoi gian cua lan 2
 					__HAL_TIM_SET_COUNTER(htim,0); // reset the counter
 					if(IC_Val2 > IC_Val1)
 						{
@@ -112,7 +112,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 						}
 					distance = diff * (.034/2);
 					is_capture = 0;
-					__HAL_TIM_SET_CAPTUREPOLARITY(htim,TIM_CHANNEL_1,TIM_INPUTCHANNELPOLARITY_RISING); // dat cuc tính thành canh lên 
+					__HAL_TIM_SET_CAPTUREPOLARITY(htim,TIM_CHANNEL_1,TIM_INPUTCHANNELPOLARITY_RISING); // dat cuc tï¿½nh thï¿½nh canh lï¿½n 
 					__HAL_TIM_DISABLE_IT(&htim1,TIM_IT_CC1);
 				}	
 		}
@@ -344,7 +344,7 @@ void SystemClock_Config(void)
   */
 static void MX_TIM1_Init(void)
 {
-
+// abcdefghjklm
   /* USER CODE BEGIN TIM1_Init 0 */
 
   /* USER CODE END TIM1_Init 0 */
